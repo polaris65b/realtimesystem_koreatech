@@ -68,7 +68,7 @@ int sp_interrupt(task *t1, int tmr, int n)
 	int i = 0, n1 = 0, a = 0;
 	task *t1_copy;
 	t1_copy = t1;
-	while(1 < n)
+	while(i < n)
 	{
 		if(tmr == t1 -> T[abs_arrival])
 		{
@@ -103,7 +103,7 @@ void update_abs_deadline(task *t1, int n, int all)
 	{
 		while(i < n)
 		{
-			t1 -> T[abs_deadline] = t1 -> T[deadline] +1 -> T[abs_arrival];
+			t1 -> T[abs_deadline] = t1 -> T[deadline] + t1 -> T[abs_arrival];
 			t1++;
 			i++;
 		}
@@ -111,7 +111,7 @@ void update_abs_deadline(task *t1, int n, int all)
 	else
 	{
 		t1 += n;
-		t1 -> T[absdeadline] = t1 -> T[deadline] + t1 -> T[abs_arrival];
+		t1 -> T[abs_deadline] = t1 -> T[deadline] + t1 -> T[abs_arrival];
 	}
 }
 
@@ -122,7 +122,9 @@ void update_abs_arrival(task *t1, int n, int k, int all)
 	{
 		while(i < n)
 		{
-			t1 -> T[abs_arrival] = t1 -> T[arrvial] + k *(t1 -> T[period]);
+			t1 -> T[abs_arrival] = t1 -> T[arrival] + k *(t1 -> T[period]);
+			t1++;
+			i++;
 		}
 	}
 	else
@@ -163,7 +165,7 @@ int min(task *t1, int n,int p)
 		t1++;
 		i++;
 	}
-	return task id;
+	return task_id;
 }
 
 float cpu_util(task *t1, int n)
