@@ -19,6 +19,8 @@ void get_tasks(task *t1, int n)
 		scanf("%d", &t1 -> T[execution]);
 		printf("Deadline time: ");
 		scanf("%d", &t1 -> T[deadline]);
+		printf("Period: ");
+		scanf("%d", &t1 -> T[period]);
 		t1 -> T[abs_arrival] = 0;
 		t1 -> T[execution_copy] = 0;
 		t1 -> T[abs_deadline] = 0;
