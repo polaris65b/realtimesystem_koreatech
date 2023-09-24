@@ -150,6 +150,7 @@ void copy_execution_time(task *t1, int n, int all)
 	{
 		t1 += n;
 		t1 -> T[execution_copy] = t1 -> T[execution];
+	}
 }
 
 int min(task *t1, int n,int p)
