@@ -93,10 +93,8 @@ int main() {
 
 	cout << "#P\t" << "AT\t" << "BT\t" << "ST\t" << "CT\t" << "TAT\t" << "WT\t" << "RT\t" << "\n" << endl;
 	for (int i = 0; i < n; i++) {
-
 		cout << p[i].pid << "\t" << p[i].arrival_time << "\t" << p[i].burst_time << "\t" << p[i].start_time << "\t" <<
-			p[i].completion_time << "\t" << p[i].turnaround_time << "\t" << p[i].waiting_time << "\t" << p[i].respons
-			e_time << "\t" << "\n" << endl;
+			p[i].completion_time << "\t" << p[i].turnaround_time << "\t" << p[i].waiting_time << "\t" << p[i].response_time << "\t" << endl;
 	}
 	cout << "Average Turnaround Time = " << avg_turnaround_time << endl;
 	cout << "Average Waiting Time = " << avg_waiting_time << endl;
