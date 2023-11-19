@@ -133,7 +133,11 @@ void *processor_thread(void *arg) {
 
         if (burst != NULL) {
             burst->cpu_id = cpu_id;
-            usleep(burst->remaining_time * 1000);
+            // usleep(burst->remaining_time * 1000);
+            struct timespec req, rem;
+            req.tv_sec = burst->remaining_time / 1000;
+            req.tv_nsec = (burst->remaining_time % 1000) * 1000000L;
+            nanosleep(&req, &rem);
             burst->finish_time = get_wall_clock_time() - simulation_start_time;
             burst->turnaround_time = burst->finish_time - burst->arrival_time;
             enqueue(&finished_bursts, burst);
